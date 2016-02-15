@@ -29,8 +29,28 @@ module.exports = {
         }
       },
       {
+        test: /\.css$/,
+        loaders: ['style', 'css']
+      },
+      {
+        test: /\.(png|jpg)$/,
+        loader: "url-loader?limit=16384"
+      },
+      {
         test: /\.html$/,
         loader: 'raw?minimize=false'
+      },
+      {
+        test: /admin-lte\/dist\/js\/app/,
+        loader: 'imports?jQuery'
+      },
+      {
+        test: /admin-lte\/dist\/js\/app/,
+        loader: 'imports?$=jQuery'
+      },
+      {
+        test: /jquery\/dist\/jquery/,
+        loader: 'exports?window.jQuery'
       }
     ]
   },
