@@ -37,20 +37,16 @@ module.exports = {
         loader: "url-loader?limit=16384"
       },
       {
+        test: /\.(eot|woff2|woff|ttf|svg)/,
+        loader: "url-loader?limit=16384"
+      },
+      {
         test: /\.html$/,
         loader: 'raw?minimize=false'
       },
       {
         test: /admin-lte\/dist\/js\/app/,
-        loader: 'imports?jQuery'
-      },
-      {
-        test: /admin-lte\/dist\/js\/app/,
-        loader: 'imports?$=jQuery'
-      },
-      {
-        test: /jquery\/dist\/jquery/,
-        loader: 'exports?window.jQuery'
+        loader: 'imports?$=jquery'
       }
     ]
   },
@@ -61,10 +57,12 @@ module.exports = {
     port: 9000
   },
   plugins: [
+    new webpack.optimize.DedupePlugin(),
     new webpack.DefinePlugin({
       ENVIRONMENT: JSON.stringify('development')
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new webpack.optimize.DedupePlugin(),
     new webpack.optimize.CommonsChunkPlugin('vendor', 'vendor.js', Infinity),
     new HtmlwebpackPlugin({
       template: './index.html'

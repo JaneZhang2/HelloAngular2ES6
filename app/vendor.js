@@ -12,8 +12,8 @@ import 'angular2/platform/browser';
 import 'angular2/router';
 import 'angular2/http';
 
-import 'jquery/dist/jquery';
-import 'admin-lte/dist/js/app';
+import 'jquery-ui/tooltip';
+//import 'admin-lte/dist/js/app';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css'
