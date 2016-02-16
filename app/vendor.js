@@ -13,7 +13,6 @@ import 'angular2/router';
 import 'angular2/http';
 
 import 'jquery-ui/tooltip';
-//import 'admin-lte/dist/js/app';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css'

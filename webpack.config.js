@@ -43,10 +43,6 @@ module.exports = {
       {
         test: /\.html$/,
         loader: 'raw?minimize=false'
-      },
-      {
-        test: /admin-lte\/dist\/js\/app/,
-        loader: 'imports?$=jquery'
       }
     ]
   },
