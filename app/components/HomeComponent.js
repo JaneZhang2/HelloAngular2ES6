@@ -11,10 +11,16 @@ import Rx from 'rx';
 import { UserService } from '../services/user';
 
 @Component({
-  selector: 'router-app',
+  selector: 'home',
   directives: [MainHeaderComponent, MainSideBarComponent, MainFooterComponent, LoggedInRouterOutlet, MenuComponent],
-  template: `<router-outlet></router-outlet>`
+  template: template
 })
-@RouteConfig(router.config)
-export class AppComponent {
+//@RouteConfig(router.config)
+export class HomeComponent {
+  //static get parameters() {
+  //  return [[UserService], [Router]];
+  //}
+
+  constructor() {
+  }
 }

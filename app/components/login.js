@@ -20,16 +20,17 @@ export class LoginComponent {
     this._router = router;
 
     this.loginForm = builder.group({
-      email: ['', Validators.compose([Validators.required, validatorFactory('email')])],
-      password: ['', Validators.required]
+      email: [''],//, Validators.compose([Validators.required, validatorFactory('email')])
+      password: ['']//, Validators.required
     });
   }
 
   onSubmit(credentials) {
-    this._userService.login(credentials).subscribe((result) => {
-      if (result) {
-        this._router.navigate(['List']);
-      }
-    });
+    this._router.navigate(['Home']);
+    //this._userService.login(credentials).subscribe((result) => {
+    //  if (result) {
+    //    this._router.navigate(['Home']);
+    //  }
+    //});
   }
 }
