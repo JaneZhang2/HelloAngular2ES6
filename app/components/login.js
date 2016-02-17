@@ -16,6 +16,8 @@ export class LoginComponent {
   }
 
   constructor(userService, builder, router) {
+    //super(userService, builder, router);
+
     this._userService = userService;
     this._router = router;
 
@@ -26,11 +28,13 @@ export class LoginComponent {
   }
 
   onSubmit(credentials) {
-    this._router.navigate(['Home']);
+    //this._router.navigate(['Home']);
     //this._userService.login(credentials).subscribe((result) => {
     //  if (result) {
     //    this._router.navigate(['Home']);
     //  }
     //});
+    this._userService.login();
+    this._router.navigate(['Home']);
   }
 }

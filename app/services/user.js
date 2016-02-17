@@ -21,17 +21,18 @@ export class UserService {
   }
 
   login(credentials) {
-    return this._http
-      .post('/login', JSON.stringify(credentials), { headers: request.getJsonHeaders() })
-      .map(res => res.json())
-      .map((res) => {
-        if (res.success) {
-          storage.setAuthToken(res.auth_token);
-          this._loggedIn.next(true);
-        }
-
-        return res.success;
-      });
+    this._loggedIn.next(true);
+    //return this._http
+    //  .post('/login', JSON.stringify(credentials), { headers: request.getJsonHeaders() })
+    //  .map(res => res.json())
+    //  .map((res) => {
+    //    if (res.success) {
+    //      storage.setAuthToken(res.auth_token);
+    //      this._loggedIn.next(true);
+    //    }
+    //
+    //    return res.success;
+    //  });
   }
 
   logout() {
