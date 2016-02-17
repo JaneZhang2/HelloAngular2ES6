@@ -1,21 +1,27 @@
 import { Component } from 'angular2/core';
-import { RouteConfig,Router } from 'angular2/router';
-import template from './app.html';
 import { MainHeaderComponent } from './MainHeaderComponent';
 import { MainSideBarComponent } from './MainSideBarComponent';
 import { MainFooterComponent } from './MainFooterComponent';
-import { MenuComponent } from './menu';
-import { LoggedInRouterOutlet } from '../plugins/router';
-import { router } from './router';
 import Rx from 'rx';
-import { UserService } from '../services/user';
 
 @Component({
   selector: 'home',
-  directives: [MainHeaderComponent, MainSideBarComponent, MainFooterComponent, LoggedInRouterOutlet, MenuComponent],
-  template: template
+  directives: [MainHeaderComponent, MainSideBarComponent, MainFooterComponent],
+  template: `
+  <div class="wrapper" style="min-height: 800px;">
+
+    <main-header></main-header>
+    <!-- Left side column. contains the logo and sidebar -->
+    <main-sidebar></main-sidebar>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+    </div>
+    <!-- /.content-wrapper -->
+    <main-footer></main-footer>
+</div>
+  `
 })
-//@RouteConfig(router.config)
 export class HomeComponent {
   //static get parameters() {
   //  return [[UserService], [Router]];
