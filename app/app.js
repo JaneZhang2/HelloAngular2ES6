@@ -12,7 +12,6 @@ import { HTTP_PROVIDERS } from 'angular2/http';
 import { PostService } from './services/post';
 import { UserService } from './services/user';
 
-
 import './test.css';
 
 if (ENVIRONMENT === 'production') {
